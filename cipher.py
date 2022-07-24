@@ -1,24 +1,25 @@
-# # Encryption
-# p = str(input("Enter your plain message: "))
-# key = int(input("Enter Key:"))
-# arr = list(p)
-# result = []
-# final_output = ""
-# for i in range(len(arr)):
-#     if(ord(arr[i])>=65 and ord(arr[i])<=90):
-#         mid_value = ((ord(arr[i])-65)+ key)%26
-#         mid_final_value = mid_value +65
-#     else:
-#         mid_value = ((ord(arr[i]))-97 + key)%26
-#         mid_final_value = mid_value + 97
-#
-#     result.append(chr(mid_final_value))
-#
-# for i in result:
-#     final_output += i
-#
-# ot = print(final_output)
-# print("Encrypted Message is" + ot)
+# Encryption
+p = str(input("Enter your plain message: "))
+key = int(input("Enter Key:"))
+arr = list(p)
+print(arr)
+result = []
+final_output = ""
+
+for i in range(len(arr)):
+    if(ord(arr[i])>=65 and ord(arr[i])<=90 and ord(arr[i]) == 32):
+        mid_value = ((ord(arr[i])-65)- key)%26
+        mid_final_value = mid_value +65
+    else:
+        mid_value = ((ord(arr[i]))-97 + key)%26
+        mid_final_value = mid_value + 97
+
+    result.append(chr(mid_final_value))
+
+for i in result:
+    final_output += i
+
+print("Encrypted Message is: " + final_output)
 
 #Decryption
 decode_p = str(input("Enter your plain message: "))
@@ -27,7 +28,7 @@ decode_arr = list(decode_p)
 decode_result = []
 decode_final_output = ""
 for i in range(len(decode_arr)):
-    if(ord(decode_arr[i])>=65 and ord(decode_arr[i])<=90):
+    if(ord(decode_arr[i])>=65 and ord(decode_arr[i])<=90 and ord(arr[i]) == 96):
         mid_value = ((ord(decode_arr[i])-65)- key)%26
         mid_final_value = mid_value +65
     else:
